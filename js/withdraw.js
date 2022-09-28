@@ -1,14 +1,14 @@
-document.getElementById('btn-deposit').addEventListener('click', function(){
-    const depositField = document.getElementById('deposit_field');
-    const newDepositFieldString = depositField.value ;
-    const newDepositFieldNumber = parseFloat(newDepositFieldString);
-    depositField.value = '';
+document.getElementById('btn-withdraw').addEventListener('click', function(){
+    const withdrawField = document.getElementById('withdraw_field');
+    const newWihdrawFieldString = withdrawField.value ;
+    const newDepositFieldNumber = parseFloat(newWihdrawFieldString);
+    withdrawField.value = '';
 
     if (isNaN(newDepositFieldNumber)) {
         alert('please type a valid Number')
         return;
     }
-    const depositTotalElement = document.getElementById('deposit_total');
+    const depositTotalElement = document.getElementById('withdraw_total');
     const previousDepositTotalString = depositTotalElement.innerText;
     const previousDepositTotalNumber = parseFloat(previousDepositTotalString);   
     const newDepositTotal = newDepositFieldNumber + previousDepositTotalNumber;
@@ -18,7 +18,7 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
     const totalBlanceString = totalBlance.innerText;
     const newTotalBlanceNumber = parseFloat(totalBlanceString)
 
-    const currentTotalBlance = newTotalBlanceNumber + newDepositFieldNumber  ;
+    const currentTotalBlance = newTotalBlanceNumber - newDepositFieldNumber  ;
     totalBlance.innerText = currentTotalBlance;
 
 
